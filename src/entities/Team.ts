@@ -4,7 +4,7 @@ import { ColumnEntity } from "./Column";
 @Entity()
 export class Team {
   @PrimaryGeneratedColumn()
-  id: string;
+  id: number;
 
   @Column({type: 'varchar', length: 255})
   name: string;
