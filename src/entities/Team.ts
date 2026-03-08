@@ -1,15 +1,15 @@
-import { PrimaryColumn, Column, Entity, OneToMany } from "typeorm";
+import { PrimaryGeneratedColumn, Column, Entity, OneToMany } from "typeorm";
 import { User } from "./User";
 import { ColumnEntity } from "./Column";
 @Entity()
 export class Team {
-  @PrimaryColumn()
+  @PrimaryGeneratedColumn()
   id: string;
 
-  @Column()
+  @Column({type: 'varchar', length: 255})
   name: string;
 
-  @Column()
+  @Column({type: 'varchar', length: 255})
   description: string;
 
   @OneToMany(() => User, (user) => user.teams)

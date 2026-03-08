@@ -7,10 +7,10 @@ export class ColumnEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column()
+  @Column({type: 'varchar', length: 75})
   name: string;
 
-  @Column()
+  @Column({type: 'int'})
   priority: number;
 
   @ManyToOne(() => Team, (team) => team.owner)

@@ -6,13 +6,13 @@ export class User {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column()
+  @Column({type: 'varchar', length: 75})
   name: string;
 
-  @Column()
+  @Column({type: 'varchar', length: 125})
   email: string;
 
-  @Column()
+  @Column({type: 'varchar', length: 125})
   password: string;
 
   @ManyToOne(() => Team, (team) => team.owner)

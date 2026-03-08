@@ -6,10 +6,10 @@ export class Task {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column()
+  @Column({type: 'varchar'})
   title: string;
 
-  @Column()
+  @Column({type: 'varchar', length: 255})
   description: string;
 
   @ManyToOne(() => ColumnEntity, (column) => column.tasks)
