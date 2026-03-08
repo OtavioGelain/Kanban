@@ -39,4 +39,13 @@ export class ColumnService {
         }
         await columnRepository.remove(column);
     }
+    static async moveColumn(id: number, teamId: number): Promise<ColumnEntity> {
+        const column = await columnRepository.findOneBy({ id });
+        if (!column) {
+            throw new Error('Column not found');
+        }
+        column.team = { id: teamId } as any;
+        await columnRepository.save(column);
+        return column;
+    }
 }
