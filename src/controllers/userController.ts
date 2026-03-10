@@ -1,5 +1,5 @@
 import { Request, Response, } from "express";
-import { UserService } from "../services/User";
+import { UserService } from "../services/UserService";
 
 export class UserController {
     static async showUsers(req: Request, res: Response): Promise<Response> {

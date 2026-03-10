@@ -3,6 +3,7 @@ import { AppDataSource } from "../database/data-source";
 import { encryptedHash } from "../utils/encryptedHash";
 import { generateToken } from "../utils/generateToken";
 import bcrypt from 'bcrypt';
+import { body } from "express-validator";
 
 const userRepository = AppDataSource.getRepository(User);
 
@@ -20,7 +21,7 @@ export class UserService {
     }
     static async createUser(userData: Partial<User>): Promise<User> {
         const hashedPassword = await encryptedHash(userData.password!); 
-        const user = userRepository.create({ ...userData, password: hashedPassword });
+        const user = userRepository.create({ ...userData,password: hashedPassword });
         if(!user.name || !user.email || !user.password) {
             throw new Error('All fields are mandatory');
         }
