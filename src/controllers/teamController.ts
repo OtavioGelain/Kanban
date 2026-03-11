@@ -78,4 +78,36 @@ export class TeamController {
             return res.status(500).json({ message: 'Internal server error' });
         }
     }
+    static async addUserToTeam(req: Request, res: Response): Promise<Response> {
+        try {
+            const teamId = Number(req.params.teamId);
+            const userId = Number(req.params.userId);
+            if(!teamId || !userId){
+                return res.status(400).json({ message: 'Invalid team ID or user ID' });
+            }
+            const team = await TeamService.addUserToTeam(userId, teamId);
+            return res.status(200).json(team);
+        } catch (error) {
+            if(error instanceof Error){
+                return res.status(400).json({ message: error.message });
+            }
+            return res.status(500).json({ message: 'Internal server error' });
+        }
+    }
+    static async removeUserFromTeam(req: Request, res: Response): Promise<Response> {
+        try {
+            const teamId = Number(req.params.teamId);
+            const userId = Number(req.params.userId);
+            if(!teamId || !userId){
+                return res.status(400).json({ message: 'Invalid team ID or user ID' });
+            }
+            const team = await TeamService.removeUserFromTeam(userId, teamId);
+            return res.status(200).json(team);
+        } catch (error) {
+            if(error instanceof Error){
+                return res.status(400).json({ message: error.message });
+            }
+            return res.status(500).json({ message: 'Internal server error' });
+        }
+    }
 }

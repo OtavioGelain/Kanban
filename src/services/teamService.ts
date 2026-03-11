@@ -47,4 +47,33 @@ export class TeamService {
         }
         return team;
     }
+    static async addUserToTeam(userId: number, teamId: number): Promise<Team> {
+        const user = await teamRepository.findOneBy({ id: userId });
+        const team = await teamRepository.findOne({ where: { id: teamId }, relations: ['users'] });
+        if (!user) {
+            throw new Error('User not found');
+        }
+        if(user.owner) {
+            throw new Error('User already has a team');
+        }
+        if (!team) {
+            throw new Error('Team not found');
+        }
+        team.users.push(user);
+        await teamRepository.save(team);
+        return team;
+    }
+    static async removeUserFromTeam(userId: number, teamId: number): Promise<Team> {
+        const user = await teamRepository.findOneBy({ id: userId });
+        const team = await teamRepository.findOne({ where: { id: teamId }, relations: ['users'] });
+        if (!user) {
+            throw new Error('User not found');
+        }
+        if (!team) {
+            throw new Error('Team not found');
+        }
+        team.users = team.users.filter((user: any) => user.id !== userId);
+        await teamRepository.save(team);
+        return team;
+    }
 }

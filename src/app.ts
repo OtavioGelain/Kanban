@@ -19,7 +19,6 @@ app.use(cors({
             callback(new Error('Blocked by Cors'))
         }
     }
-
 }))
 app.use(router);
 app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
