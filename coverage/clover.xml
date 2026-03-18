@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1773788274181" clover="3.2.0">
-  <project timestamp="1773788274181" name="All files">
-    <metrics statements="168" coveredstatements="87" conditionals="5" coveredconditionals="0" methods="10" coveredmethods="0" elements="183" coveredelements="87" complexity="0" loc="168" ncloc="168" packages="4" files="7" classes="7"/>
+<coverage generated="1773867438248" clover="3.2.0">
+  <project timestamp="1773867438248" name="All files">
+    <metrics statements="168" coveredstatements="88" conditionals="7" coveredconditionals="1" methods="10" coveredmethods="1" elements="185" coveredelements="90" complexity="0" loc="168" ncloc="168" packages="4" files="7" classes="7"/>
     <package name="database">
       <metrics statements="19" coveredstatements="19" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="data-source.ts" path="/home/otavio/Desenvolvimento-Pessoal/Kanban/src/database/data-source.ts">
@@ -147,18 +147,18 @@
       </file>
     </package>
     <package name="services">
-      <metrics statements="51" coveredstatements="13" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="0"/>
+      <metrics statements="51" coveredstatements="14" conditionals="2" coveredconditionals="1" methods="6" coveredmethods="1"/>
       <file name="columnService.ts" path="/home/otavio/Desenvolvimento-Pessoal/Kanban/src/services/columnService.ts">
-        <metrics statements="51" coveredstatements="13" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="0"/>
+        <metrics statements="51" coveredstatements="14" conditionals="2" coveredconditionals="1" methods="6" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
         <line num="5" count="1" type="stmt"/>
         <line num="6" count="1" type="stmt"/>
-        <line num="7" count="1" type="stmt"/>
-        <line num="8" count="0" type="stmt"/>
-        <line num="9" count="0" type="stmt"/>
+        <line num="7" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="0" type="cond" truecount="0" falsecount="1"/>
         <line num="10" count="0" type="stmt"/>
         <line num="11" count="1" type="stmt"/>
         <line num="12" count="0" type="stmt"/>

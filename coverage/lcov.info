@@ -191,8 +191,8 @@ FN:26,updateColumn
 FN:35,deleteColumn
 FN:42,moveColumn
 FNF:6
-FNH:0
-FNDA:0,showColumns
+FNH:1
+FNDA:1,showColumns
 FNDA:0,showColumnById
 FNDA:0,createColumn
 FNDA:0,updateColumn
@@ -205,7 +205,7 @@ DA:4,1
 DA:5,1
 DA:6,1
 DA:7,1
-DA:8,0
+DA:8,1
 DA:9,0
 DA:10,0
 DA:11,1
@@ -250,7 +250,9 @@ DA:49,0
 DA:50,0
 DA:51,1
 LF:51
-LH:13
-BRF:0
-BRH:0
+LH:14
+BRDA:7,0,0,1
+BRDA:9,1,0,0
+BRF:2
+BRH:1
 end_of_record
