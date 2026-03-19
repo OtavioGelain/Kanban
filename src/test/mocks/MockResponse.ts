@@ -1,9 +1,6 @@
 export const mockResponse = () => {
     const res: any = {};
-    
-    res.status = (status: number) => {
-        res.statusCode = status;
-        return res;
-    };
+    res.status = jest.fn().mockReturnValue(res);
+    res.json = jest.fn().mockReturnValue(res);
     return res;
 }

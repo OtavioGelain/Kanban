@@ -9,6 +9,6 @@ describe('ColumnController', () => {
        }
 
        const response = await ColumnService.showColumns();
-         expect(response).toEqual(body);
+       expect(response).toEqual(body);
     });
 });
