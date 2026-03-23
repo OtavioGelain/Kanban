@@ -1,14 +1,10 @@
-import { ColumnController } from "../../controllers/columnController";
 import { ColumnService } from "../../services/columnService";
 
-describe('ColumnController', () => {
-    it('showColumns should return a list of columns', async () => {
-       const body = {
-        title: 'showColumns test',
-        description: 'Testing the showColumns method',
-       }
+describe('Column Service', () => {
+    it('Should show Columns', async () => {
+        const showColumns = await ColumnService.showColumns()
 
-       const response = await ColumnService.showColumns();
-       expect(response).toEqual(body);
-    });
-});
+        expect(showColumns).toBeDefined()
+        expect(Array.isArray(showColumns)).toBe(true)
+    })
+})
