@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">27.45% </span>
+                <span class="strong">29.41% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>14/51</span>
+                <span class='fraction'>15/51</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">33.33% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1/2</span>
+                <span class='fraction'>1/3</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">27.45% </span>
+                <span class="strong">29.41% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>14/51</span>
+                <span class='fraction'>15/51</span>
             </div>
         
             
@@ -121,19 +121,19 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -171,9 +171,9 @@ import { AppDataSource } from "../database/data-source";
 const columnRepository = AppDataSource.getRepository(ColumnEntity);
 &nbsp;
 export class ColumnService {
-    static async showColumns(): Promise&lt;ColumnEntity[]&gt; {
-        const columns = await columnRepository.find();
-<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >        return columns;</span></span>
+    static <span class="fstat-no" title="function not covered" >async showColumns(): Promise&lt;ColumnEntity[]&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        const columns = await columnRepository.find();</span>
+<span class="cstat-no" title="statement not covered" >        return columns;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
     static <span class="fstat-no" title="function not covered" >async showColumnById(id: number): Promise&lt;ColumnEntity | null&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        const column = await columnRepository.findOneBy({ id });</span>
@@ -182,9 +182,9 @@ export class ColumnService {
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >        return column;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-    static <span class="fstat-no" title="function not covered" >async createColumn(columnData: Partial&lt;ColumnEntity&gt;): Promise&lt;ColumnEntity&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        const column = columnRepository.create(columnData);</span>
-<span class="cstat-no" title="statement not covered" >        if(!column.name || !column.priority) {</span>
+    static async createColumn(columnData: Partial&lt;ColumnEntity&gt;): Promise&lt;ColumnEntity&gt; {
+        const column = columnRepository.create(columnData);
+        if(!column.name<span class="branch-0 cbranch-no" title="branch not covered" > || !column.priority)</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >            throw new Error('All fields are mandatory');</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >        await columnRepository.save(column);</span>
@@ -223,7 +223,7 @@ export class ColumnService {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-03-23T18:47:14.992Z
+                at 2026-03-23T21:26:09.369Z
             </div>
         <script src="../prettify.js"></script>
         <script>

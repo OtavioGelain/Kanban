@@ -16,7 +16,7 @@ export class ColumnService {
         return column;
     }
     static async createColumn(columnData: Partial<ColumnEntity>): Promise<ColumnEntity> {
-        const column = columnRepository.create(columnData);
+        const column = await columnRepository.create(columnData);
         if(!column.name || !column.priority) {
             throw new Error('All fields are mandatory');
         }
